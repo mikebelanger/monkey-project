@@ -28,11 +28,11 @@ return console.error([cljs.core.str("Websocket REPL error "),cljs.core.str(new c
 cljs.core._add_method.call(null,weasel.repl.process_message,new cljs.core.Keyword(null,"eval-js","eval-js",760905924),(function (message){
 var code = new cljs.core.Keyword(null,"code","code",1586293142).cljs$core$IFn$_invoke$arity$1(message);
 return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"op","op",-1882987955),new cljs.core.Keyword(null,"result","result",1415092211),new cljs.core.Keyword(null,"value","value",305978217),(function (){try{return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"success","success",1890645906),new cljs.core.Keyword(null,"value","value",305978217),[cljs.core.str(eval(code))].join('')], null);
-}catch (e10923){if((e10923 instanceof Error)){
-var e = e10923;
+}catch (e10940){if((e10940 instanceof Error)){
+var e = e10940;
 return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"exception","exception",-335277064),new cljs.core.Keyword(null,"value","value",305978217),cljs.core.pr_str.call(null,e),new cljs.core.Keyword(null,"stacktrace","stacktrace",-95588394),(cljs.core.truth_(e.hasOwnProperty("stack"))?e.stack:"No stacktrace available.")], null);
 } else {
-var e = e10923;
+var e = e10940;
 return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"exception","exception",-335277064),new cljs.core.Keyword(null,"value","value",305978217),cljs.core.pr_str.call(null,e),new cljs.core.Keyword(null,"stacktrace","stacktrace",-95588394),"No stacktrace available."], null);
 
 }
@@ -40,14 +40,14 @@ return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"st
 }));
 weasel.repl.repl_print = (function weasel$repl$repl_print(var_args){
 var args__8433__auto__ = [];
-var len__8426__auto___10925 = arguments.length;
-var i__8427__auto___10926 = (0);
+var len__8426__auto___10942 = arguments.length;
+var i__8427__auto___10943 = (0);
 while(true){
-if((i__8427__auto___10926 < len__8426__auto___10925)){
-args__8433__auto__.push((arguments[i__8427__auto___10926]));
+if((i__8427__auto___10943 < len__8426__auto___10942)){
+args__8433__auto__.push((arguments[i__8427__auto___10943]));
 
-var G__10927 = (i__8427__auto___10926 + (1));
-i__8427__auto___10926 = G__10927;
+var G__10944 = (i__8427__auto___10943 + (1));
+i__8427__auto___10943 = G__10944;
 continue;
 } else {
 }
@@ -70,20 +70,20 @@ return null;
 
 weasel.repl.repl_print.cljs$lang$maxFixedArity = (0);
 
-weasel.repl.repl_print.cljs$lang$applyTo = (function (seq10924){
-return weasel.repl.repl_print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq10924));
+weasel.repl.repl_print.cljs$lang$applyTo = (function (seq10941){
+return weasel.repl.repl_print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq10941));
 });
 
 weasel.repl.console_print = (function weasel$repl$console_print(var_args){
 var args__8433__auto__ = [];
-var len__8426__auto___10929 = arguments.length;
-var i__8427__auto___10930 = (0);
+var len__8426__auto___10946 = arguments.length;
+var i__8427__auto___10947 = (0);
 while(true){
-if((i__8427__auto___10930 < len__8426__auto___10929)){
-args__8433__auto__.push((arguments[i__8427__auto___10930]));
+if((i__8427__auto___10947 < len__8426__auto___10946)){
+args__8433__auto__.push((arguments[i__8427__auto___10947]));
 
-var G__10931 = (i__8427__auto___10930 + (1));
-i__8427__auto___10930 = G__10931;
+var G__10948 = (i__8427__auto___10947 + (1));
+i__8427__auto___10947 = G__10948;
 continue;
 } else {
 }
@@ -100,43 +100,43 @@ return console.log.apply(console,cljs.core.into_array.call(null,args));
 
 weasel.repl.console_print.cljs$lang$maxFixedArity = (0);
 
-weasel.repl.console_print.cljs$lang$applyTo = (function (seq10928){
-return weasel.repl.console_print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq10928));
+weasel.repl.console_print.cljs$lang$applyTo = (function (seq10945){
+return weasel.repl.console_print.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq10945));
 });
 
 weasel.repl.print_fns = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null,"repl","repl",-35398667),weasel.repl.repl_print,new cljs.core.Keyword(null,"console","console",1228072057),weasel.repl.console_print,new cljs.core.PersistentHashSet(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"repl","repl",-35398667),null,new cljs.core.Keyword(null,"console","console",1228072057),null], null), null),(function() { 
-var G__10932__delegate = function (args){
+var G__10949__delegate = function (args){
 cljs.core.apply.call(null,weasel.repl.console_print,args);
 
 return cljs.core.apply.call(null,weasel.repl.repl_print,args);
 };
-var G__10932 = function (var_args){
+var G__10949 = function (var_args){
 var args = null;
 if (arguments.length > 0) {
-var G__10933__i = 0, G__10933__a = new Array(arguments.length -  0);
-while (G__10933__i < G__10933__a.length) {G__10933__a[G__10933__i] = arguments[G__10933__i + 0]; ++G__10933__i;}
-  args = new cljs.core.IndexedSeq(G__10933__a,0);
+var G__10950__i = 0, G__10950__a = new Array(arguments.length -  0);
+while (G__10950__i < G__10950__a.length) {G__10950__a[G__10950__i] = arguments[G__10950__i + 0]; ++G__10950__i;}
+  args = new cljs.core.IndexedSeq(G__10950__a,0);
 } 
-return G__10932__delegate.call(this,args);};
-G__10932.cljs$lang$maxFixedArity = 0;
-G__10932.cljs$lang$applyTo = (function (arglist__10934){
-var args = cljs.core.seq(arglist__10934);
-return G__10932__delegate(args);
+return G__10949__delegate.call(this,args);};
+G__10949.cljs$lang$maxFixedArity = 0;
+G__10949.cljs$lang$applyTo = (function (arglist__10951){
+var args = cljs.core.seq(arglist__10951);
+return G__10949__delegate(args);
 });
-G__10932.cljs$core$IFn$_invoke$arity$variadic = G__10932__delegate;
-return G__10932;
+G__10949.cljs$core$IFn$_invoke$arity$variadic = G__10949__delegate;
+return G__10949;
 })()
 ], true, false);
 weasel.repl.connect = (function weasel$repl$connect(var_args){
 var args__8433__auto__ = [];
-var len__8426__auto___10942 = arguments.length;
-var i__8427__auto___10943 = (0);
+var len__8426__auto___10959 = arguments.length;
+var i__8427__auto___10960 = (0);
 while(true){
-if((i__8427__auto___10943 < len__8426__auto___10942)){
-args__8433__auto__.push((arguments[i__8427__auto___10943]));
+if((i__8427__auto___10960 < len__8426__auto___10959)){
+args__8433__auto__.push((arguments[i__8427__auto___10960]));
 
-var G__10944 = (i__8427__auto___10943 + (1));
-i__8427__auto___10943 = G__10944;
+var G__10961 = (i__8427__auto___10960 + (1));
+i__8427__auto___10960 = G__10961;
 continue;
 } else {
 }
@@ -147,18 +147,18 @@ var argseq__8434__auto__ = ((((1) < args__8433__auto__.length))?(new cljs.core.I
 return weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__8434__auto__);
 });
 
-weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic = (function (repl_server_url,p__10937){
-var map__10938 = p__10937;
-var map__10938__$1 = ((((!((map__10938 == null)))?((((map__10938.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10938.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10938):map__10938);
-var verbose = cljs.core.get.call(null,map__10938__$1,new cljs.core.Keyword(null,"verbose","verbose",1694226060),true);
-var on_open = cljs.core.get.call(null,map__10938__$1,new cljs.core.Keyword(null,"on-open","on-open",-1391088163));
-var on_error = cljs.core.get.call(null,map__10938__$1,new cljs.core.Keyword(null,"on-error","on-error",1728533530));
-var on_close = cljs.core.get.call(null,map__10938__$1,new cljs.core.Keyword(null,"on-close","on-close",-761178394));
-var print = cljs.core.get.call(null,map__10938__$1,new cljs.core.Keyword(null,"print","print",1299562414),new cljs.core.Keyword(null,"repl","repl",-35398667));
+weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic = (function (repl_server_url,p__10954){
+var map__10955 = p__10954;
+var map__10955__$1 = ((((!((map__10955 == null)))?((((map__10955.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10955.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10955):map__10955);
+var verbose = cljs.core.get.call(null,map__10955__$1,new cljs.core.Keyword(null,"verbose","verbose",1694226060),true);
+var on_open = cljs.core.get.call(null,map__10955__$1,new cljs.core.Keyword(null,"on-open","on-open",-1391088163));
+var on_error = cljs.core.get.call(null,map__10955__$1,new cljs.core.Keyword(null,"on-error","on-error",1728533530));
+var on_close = cljs.core.get.call(null,map__10955__$1,new cljs.core.Keyword(null,"on-close","on-close",-761178394));
+var print = cljs.core.get.call(null,map__10955__$1,new cljs.core.Keyword(null,"print","print",1299562414),new cljs.core.Keyword(null,"repl","repl",-35398667));
 var repl_connection = weasel.impls.websocket.websocket_connection.call(null);
 cljs.core.swap_BANG_.call(null,weasel.repl.ws_connection,cljs.core.constantly.call(null,repl_connection));
 
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"opened","opened",-1451743091),((function (repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print){
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"opened","opened",-1451743091),((function (repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print){
 return (function (evt){
 cljs.core.set_print_fn_BANG_.call(null,((cljs.core.fn_QMARK_.call(null,print))?print:cljs.core.get.call(null,weasel.repl.print_fns,print)));
 
@@ -174,21 +174,21 @@ return on_open.call(null);
 } else {
 return null;
 }
-});})(repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print))
+});})(repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print))
 );
 
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"message","message",-406056002),((function (repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print){
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"message","message",-406056002),((function (repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print){
 return (function (evt){
-var map__10940 = cljs.reader.read_string.call(null,evt.message);
-var map__10940__$1 = ((((!((map__10940 == null)))?((((map__10940.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10940.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10940):map__10940);
-var message = map__10940__$1;
-var op = cljs.core.get.call(null,map__10940__$1,new cljs.core.Keyword(null,"op","op",-1882987955));
+var map__10957 = cljs.reader.read_string.call(null,evt.message);
+var map__10957__$1 = ((((!((map__10957 == null)))?((((map__10957.cljs$lang$protocol_mask$partition0$ & (64))) || (map__10957.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__10957):map__10957);
+var message = map__10957__$1;
+var op = cljs.core.get.call(null,map__10957__$1,new cljs.core.Keyword(null,"op","op",-1882987955));
 var response = cljs.core.pr_str.call(null,weasel.repl.process_message.call(null,message));
 return clojure.browser.net.transmit.call(null,repl_connection,response);
-});})(repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print))
+});})(repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print))
 );
 
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"closed","closed",-919675359),((function (repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print){
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"closed","closed",-919675359),((function (repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print){
 return (function (evt){
 cljs.core.reset_BANG_.call(null,weasel.repl.ws_connection,null);
 
@@ -202,10 +202,10 @@ return on_close.call(null);
 } else {
 return null;
 }
-});})(repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print))
+});})(repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print))
 );
 
-clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"error","error",-978969032),((function (repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print){
+clojure.browser.event.listen.call(null,repl_connection,new cljs.core.Keyword(null,"error","error",-978969032),((function (repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print){
 return (function (evt){
 if(cljs.core.truth_(verbose)){
 console.error("WebSocket error",evt);
@@ -217,7 +217,7 @@ return on_error.call(null,evt);
 } else {
 return null;
 }
-});})(repl_connection,map__10938,map__10938__$1,verbose,on_open,on_error,on_close,print))
+});})(repl_connection,map__10955,map__10955__$1,verbose,on_open,on_error,on_close,print))
 );
 
 clojure.browser.repl.bootstrap.call(null);
@@ -227,10 +227,10 @@ return clojure.browser.net.connect.call(null,repl_connection,repl_server_url);
 
 weasel.repl.connect.cljs$lang$maxFixedArity = (1);
 
-weasel.repl.connect.cljs$lang$applyTo = (function (seq10935){
-var G__10936 = cljs.core.first.call(null,seq10935);
-var seq10935__$1 = cljs.core.next.call(null,seq10935);
-return weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic(G__10936,seq10935__$1);
+weasel.repl.connect.cljs$lang$applyTo = (function (seq10952){
+var G__10953 = cljs.core.first.call(null,seq10952);
+var seq10952__$1 = cljs.core.next.call(null,seq10952);
+return weasel.repl.connect.cljs$core$IFn$_invoke$arity$variadic(G__10953,seq10952__$1);
 });
 
 
