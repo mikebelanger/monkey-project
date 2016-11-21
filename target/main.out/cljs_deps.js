@@ -1,7 +1,8 @@
 goog.addDependency("base.js", ['goog'], []);
 goog.addDependency("../cljs/core.js", ['cljs.core'], ['goog.string', 'goog.object', 'goog.math.Integer', 'goog.string.StringBuffer', 'goog.array', 'goog.math.Long']);
+goog.addDependency("../monkey_project/control_sensors.js", ['monkey_project.control_sensors'], ['cljs.core']);
 goog.addDependency("../b4w.inc.js", ['blend4web'], []);
-goog.addDependency("../monkey_project/engine_interface.js", ['monkey_project.engine_interface'], ['cljs.core', 'blend4web']);
+goog.addDependency("../monkey_project/engine_interface.js", ['monkey_project.engine_interface'], ['monkey_project.control_sensors', 'cljs.core', 'blend4web']);
 goog.addDependency("../monkey_project/core.js", ['monkey_project.core'], ['cljs.core', 'blend4web', 'monkey_project.engine_interface']);
 goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['cljs.core', 'goog.events.EventTarget', 'goog.events.EventType', 'goog.events']);
 goog.addDependency("../clojure/browser/net.js", ['clojure.browser.net'], ['goog.net.xpc.CfgFields', 'goog.net.XhrIo', 'goog.json', 'goog.Uri', 'cljs.core', 'goog.net.EventType', 'goog.net.xpc.CrossPageChannel', 'goog.net.WebSocket', 'clojure.browser.event']);
@@ -21,4 +22,4 @@ goog.addDependency("../adzerk/boot_reload/display.js", ['adzerk.boot_reload.disp
 goog.addDependency("../adzerk/boot_reload/websocket.js", ['adzerk.boot_reload.websocket'], ['cljs.core', 'clojure.browser.net', 'goog.net.WebSocket', 'clojure.browser.event']);
 goog.addDependency("../adzerk/boot_reload/client.js", ['adzerk.boot_reload.client'], ['adzerk.boot_reload.connection', 'adzerk.boot_reload.reload', 'adzerk.boot_reload.display', 'goog.net.jsloader', 'goog.Uri', 'cljs.core', 'adzerk.boot_reload.websocket', 'clojure.browser.net', 'cljs.reader', 'clojure.browser.event']);
 goog.addDependency("../adzerk/boot_reload/init726.js", ['adzerk.boot_reload.init726'], ['monkey_project.core', 'cljs.core', 'adzerk.boot_reload.client']);
-goog.addDependency("../boot/cljs/main9141.js", ['boot.cljs.main9141'], ['monkey_project.core', 'cljs.core', 'adzerk.boot_cljs_repl', 'adzerk.boot_reload.init726', 'monkey_project.engine_interface']);
+goog.addDependency("../boot/cljs/main9141.js", ['boot.cljs.main9141'], ['monkey_project.control_sensors', 'monkey_project.core', 'cljs.core', 'adzerk.boot_cljs_repl', 'adzerk.boot_reload.init726', 'monkey_project.engine_interface']);
