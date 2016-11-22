@@ -1,2 +1,2 @@
-(ns adzerk.boot-reload.init726 (:require [adzerk.boot-reload.client :as client] monkey-project.core))
-(client/connect "ws://localhost:50316" {:ws-host nil, :asset-host nil, :on-jsload (fn* [] (monkey-project.core/start))})
+(ns adzerk.boot-reload.init726 (:require [adzerk.boot-reload.client :as client] monkey-project.live))
+(client/connect "ws://localhost:51544" {:ws-host nil, :asset-host nil, :on-jsload (fn* [] (monkey-project.live/rotate-stuff))})

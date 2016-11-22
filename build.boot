@@ -26,12 +26,11 @@
                "uranium.js"}
         :to-resource #{#"uranium.js*"}))
 
-(deftask save-n-build
+(deftask b4w-live
   []
   (comp
     (watch)
-    (reload :on-jsload 'monkey-project.core/start)
-    (cljs-repl)
+    (reload :on-jsload 'monkey-project.live/rotate-stuff)
     (cljs)
     (uranium)
     (target)

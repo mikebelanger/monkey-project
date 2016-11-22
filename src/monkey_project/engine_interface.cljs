@@ -105,30 +105,3 @@
 
                            (do (.load data (:json load-data))
                                (.init main (:canvas load-data))))))))
-
-
-; (defn stageload-cb [data-id success]
-;  (when (.is-primary-loaded (load-b4w-module :data))
-;       ;;Minimal setup to create a continuous, simple object animation.
-;       ;;timeline-sensor will feed the rotate-cube callback the global time(s)
-;        (let [timeline-sensor (.create-timeline-sensor (load-b4w-module :controls))]
-;                           ;;it looks like you need to throw sensor values in a manifold if
-;                           ;;you want to grab their data, even if it's just one sensor.
-;             manifold  (.create-sensor-manifold
-;                                         (load-b4w-module :controls)
-;                                         nil ;;only specify if its one object you want
-;                                         "main" ;;manifold id -- can be basically anything
-;                                         (.-CT_CONTINUOUS (load-b4w-module :controls));;play forever
-;                                         ;;you have to add all sensors to the manifold's
-;                                         ;;array.
-;                                         (clj->js [timeline-sensor])
-;                                         custom-fn))))
-;
-; (defn loaded-cb [data-id success]
-;  "Needed for basic scene loading.
-;   Data-id seems to be the thread the data is loaded. Success is a boolean for
-;   whether or not the scene loading was successful.")
-;
-; (defn b4w-load-dispatch [main data canvas]
-;   "Takes the main canvas, json file and data and loads it."
-;   (.load data loaded-cb stageload-cb true false))
