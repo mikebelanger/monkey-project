@@ -3,14 +3,15 @@
   :resource-paths #{"resources"}
   :dependencies '[[org.clojure/clojure "1.9.0-alpha12"]
                   [org.clojure/clojurescript "1.9.229"]
+                  [org.clojure/tools.nrepl "0.2.12" :scope "test"]
+                  [org.clojure/core.async "0.2.395"]
                   [adzerk/boot-cljs "1.7.228-1"]
                   [adzerk/boot-cljs-repl "0.3.3"]
                   [adzerk/boot-reload "0.4.13" :scope "test"]
                   [cljsjs/blend4web "16.09-2"]
                   [tailrecursion/boot-jetty "0.1.0"]
                   [com.cemerick/piggieback "0.2.1" :scope "test"]
-                  [weasel "0.7.0" :scope "test"]
-                  [org.clojure/tools.nrepl "0.2.12" :scope "test"]])
+                  [weasel "0.7.0" :scope "test"]])
 
 (require '[adzerk.boot-cljs :refer [cljs]]
          '[tailrecursion.boot-jetty :refer [serve]]
@@ -30,8 +31,19 @@
   []
   (comp
     (watch)
-    (reload :on-jsload 'monkey-project.live/rotate-stuff)
+    (reload :on-jsload 'monkey-project.live/some-symbol)
+    (reload :on-jsload 'monkey-project.live/fn-map)
     (cljs)
+    (uranium)
+    (target)
+    (serve :port 8000)))
+
+(deftask dev
+  []
+  (comp
+    (watch)
+    (cljs)
+    (reload :on-jsload 'monkey-project.core/start)
     (uranium)
     (target)
     (serve :port 8000)))

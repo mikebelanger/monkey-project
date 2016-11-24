@@ -1,10 +1,16 @@
 goog.addDependency("base.js", ['goog'], []);
 goog.addDependency("../cljs/core.js", ['cljs.core'], ['goog.string', 'goog.object', 'goog.math.Integer', 'goog.string.StringBuffer', 'goog.array', 'goog.math.Long']);
 goog.addDependency("../monkey_project/control_sensors.js", ['monkey_project.control_sensors'], ['cljs.core']);
+goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
+goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
+goog.addDependency("../cljs/core/async/impl/dispatch.js", ['cljs.core.async.impl.dispatch'], ['cljs.core', 'cljs.core.async.impl.buffers', 'goog.async.nextTick']);
+goog.addDependency("../cljs/core/async/impl/channels.js", ['cljs.core.async.impl.channels'], ['cljs.core.async.impl.dispatch', 'cljs.core', 'cljs.core.async.impl.buffers', 'cljs.core.async.impl.protocols']);
+goog.addDependency("../cljs/core/async/impl/ioc_helpers.js", ['cljs.core.async.impl.ioc_helpers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
+goog.addDependency("../cljs/core/async/impl/timers.js", ['cljs.core.async.impl.timers'], ['cljs.core.async.impl.channels', 'cljs.core.async.impl.dispatch', 'cljs.core', 'cljs.core.async.impl.protocols']);
+goog.addDependency("../cljs/core/async.js", ['cljs.core.async'], ['cljs.core.async.impl.channels', 'cljs.core.async.impl.dispatch', 'cljs.core', 'cljs.core.async.impl.buffers', 'cljs.core.async.impl.protocols', 'cljs.core.async.impl.ioc_helpers', 'cljs.core.async.impl.timers']);
 goog.addDependency("../b4w.inc.js", ['blend4web'], []);
 goog.addDependency("../monkey_project/engine_interface.js", ['monkey_project.engine_interface'], ['monkey_project.control_sensors', 'cljs.core', 'blend4web']);
-goog.addDependency("../monkey_project/live.js", ['monkey_project.live'], ['cljs.core', 'monkey_project.engine_interface']);
-goog.addDependency("../monkey_project/core.js", ['monkey_project.core'], ['monkey_project.live', 'cljs.core', 'blend4web', 'monkey_project.engine_interface']);
+goog.addDependency("../monkey_project/live.js", ['monkey_project.live'], ['cljs.core', 'cljs.core.async', 'monkey_project.engine_interface']);
 goog.addDependency("../clojure/browser/event.js", ['clojure.browser.event'], ['cljs.core', 'goog.events.EventTarget', 'goog.events.EventType', 'goog.events']);
 goog.addDependency("../clojure/browser/net.js", ['clojure.browser.net'], ['goog.net.xpc.CfgFields', 'goog.net.XhrIo', 'goog.json', 'goog.Uri', 'cljs.core', 'goog.net.EventType', 'goog.net.xpc.CrossPageChannel', 'goog.net.WebSocket', 'clojure.browser.event']);
 goog.addDependency("../adzerk/boot_reload/connection.js", ['adzerk.boot_reload.connection'], ['cljs.core', 'clojure.browser.net']);
@@ -14,5 +20,7 @@ goog.addDependency("../adzerk/boot_reload/display.js", ['adzerk.boot_reload.disp
 goog.addDependency("../adzerk/boot_reload/websocket.js", ['adzerk.boot_reload.websocket'], ['cljs.core', 'clojure.browser.net', 'goog.net.WebSocket', 'clojure.browser.event']);
 goog.addDependency("../cljs/reader.js", ['cljs.reader'], ['goog.string', 'cljs.core', 'goog.string.StringBuffer']);
 goog.addDependency("../adzerk/boot_reload/client.js", ['adzerk.boot_reload.client'], ['adzerk.boot_reload.connection', 'adzerk.boot_reload.reload', 'adzerk.boot_reload.display', 'goog.net.jsloader', 'goog.Uri', 'cljs.core', 'adzerk.boot_reload.websocket', 'clojure.browser.net', 'cljs.reader', 'clojure.browser.event']);
-goog.addDependency("../adzerk/boot_reload/init726.js", ['adzerk.boot_reload.init726'], ['monkey_project.live', 'cljs.core', 'adzerk.boot_reload.client']);
-goog.addDependency("../boot/cljs/main744.js", ['boot.cljs.main744'], ['monkey_project.control_sensors', 'monkey_project.live', 'monkey_project.core', 'cljs.core', 'adzerk.boot_reload.init726', 'monkey_project.engine_interface']);
+goog.addDependency("../adzerk/boot_reload/init763.js", ['adzerk.boot_reload.init763'], ['monkey_project.live', 'cljs.core', 'adzerk.boot_reload.client']);
+goog.addDependency("../monkey_project/core.js", ['monkey_project.core'], ['monkey_project.live', 'cljs.core', 'blend4web', 'monkey_project.engine_interface']);
+goog.addDependency("../adzerk/boot_reload/init758.js", ['adzerk.boot_reload.init758'], ['monkey_project.live', 'cljs.core', 'adzerk.boot_reload.client']);
+goog.addDependency("../boot/cljs/main781.js", ['boot.cljs.main781'], ['monkey_project.control_sensors', 'adzerk.boot_reload.init763', 'monkey_project.live', 'monkey_project.core', 'cljs.core', 'monkey_project.engine_interface', 'adzerk.boot_reload.init758']);

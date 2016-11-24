@@ -40,6 +40,7 @@
    :preloader "preloader"
    :quat "quat"
    :rgb "rgb"
+   :rgba "rgba"
    :scenes "scenes"
    :screenshooter "screenshooter"
    :sfx "sfx"

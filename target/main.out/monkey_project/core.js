@@ -4,15 +4,10 @@ goog.require('cljs.core');
 goog.require('blend4web');
 goog.require('monkey_project.engine_interface');
 goog.require('monkey_project.live');
-monkey_project.core.spin_the_monkey = (function monkey_project$core$spin_the_monkey(time){
-var scenes = monkey_project.engine_interface.load_b4w_module.call(null,new cljs.core.Keyword(null,"scenes","scenes",-425219404));
-var trans = monkey_project.engine_interface.load_b4w_module.call(null,new cljs.core.Keyword(null,"transform","transform",1381301764));
-var monkey = scenes.get_object_by_name("Monkey");
-return trans.set_rotation_euler(monkey,(time * new cljs.core.Keyword(null,"x","x",2099068185).cljs$core$IFn$_invoke$arity$1(monkey_project.live.rotate_stuff.call(null))),(time * new cljs.core.Keyword(null,"y","y",-1757859776).cljs$core$IFn$_invoke$arity$1(monkey_project.live.rotate_stuff.call(null))),(time * new cljs.core.Keyword(null,"z","z",-789527183).cljs$core$IFn$_invoke$arity$1(monkey_project.live.rotate_stuff.call(null))));
-});
 monkey_project.core.start = (function monkey_project$core$start(){
-var timeline_sensor = monkey_project.engine_interface.load_b4w_module.call(null,new cljs.core.Keyword(null,"controls","controls",1340701452)).create_timeline_sensor();
-var sensor_manifold = monkey_project.engine_interface.enter_sensor_manifold_data.call(null,false,"main",monkey_project.engine_interface.load_b4w_module.call(null,new cljs.core.Keyword(null,"controls","controls",1340701452)).CT_CONTINUOUS,cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [timeline_sensor], null)),monkey_project.core.spin_the_monkey);
+var controls = monkey_project.engine_interface.load_b4w_module.call(null,new cljs.core.Keyword(null,"controls","controls",1340701452));
+var timeline_sensor = controls.create_timeline_sensor();
+var sensor_manifold = monkey_project.engine_interface.enter_sensor_manifold_data.call(null,false,"main",controls.CT_CONTINUOUS,cljs.core.clj__GT_js.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [timeline_sensor], null)),monkey_project.live.update_loop);
 var load_data = monkey_project.engine_interface.enter_b4w_data.call(null,"monkey_project.json",document.getElementById("container"));
 return monkey_project.engine_interface.init_b4w.call(null,load_data,sensor_manifold);
 });

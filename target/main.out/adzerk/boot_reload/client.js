@@ -55,10 +55,10 @@ return new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invok
 ,new cljs.core.Keyword(null,"default","default",-1987822328),hierarchy__8270__auto__,method_table__8266__auto__,prefer_table__8267__auto__,method_cache__8268__auto__,cached_hierarchy__8269__auto__));
 })();
 }
-cljs.core._add_method.call(null,adzerk.boot_reload.client.handle,new cljs.core.Keyword(null,"reload","reload",863702807),(function (p__8958,opts){
-var map__8959 = p__8958;
-var map__8959__$1 = ((((!((map__8959 == null)))?((((map__8959.cljs$lang$protocol_mask$partition0$ & (64))) || (map__8959.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__8959):map__8959);
-var files = cljs.core.get.call(null,map__8959__$1,new cljs.core.Keyword(null,"files","files",-472457450));
+cljs.core._add_method.call(null,adzerk.boot_reload.client.handle,new cljs.core.Keyword(null,"reload","reload",863702807),(function (p__13544,opts){
+var map__13545 = p__13544;
+var map__13545__$1 = ((((!((map__13545 == null)))?((((map__13545.cljs$lang$protocol_mask$partition0$ & (64))) || (map__13545.cljs$core$ISeq$))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__13545):map__13545);
+var files = cljs.core.get.call(null,map__13545__$1,new cljs.core.Keyword(null,"files","files",-472457450));
 return adzerk.boot_reload.reload.reload.call(null,files,opts);
 }));
 cljs.core._add_method.call(null,adzerk.boot_reload.client.handle,new cljs.core.Keyword(null,"visual","visual",942787224),(function (state,opts){
@@ -70,14 +70,14 @@ return null;
 }));
 adzerk.boot_reload.client.connect = (function adzerk$boot_reload$client$connect(var_args){
 var args__8433__auto__ = [];
-var len__8426__auto___8967 = arguments.length;
-var i__8427__auto___8968 = (0);
+var len__8426__auto___13553 = arguments.length;
+var i__8427__auto___13554 = (0);
 while(true){
-if((i__8427__auto___8968 < len__8426__auto___8967)){
-args__8433__auto__.push((arguments[i__8427__auto___8968]));
+if((i__8427__auto___13554 < len__8426__auto___13553)){
+args__8433__auto__.push((arguments[i__8427__auto___13554]));
 
-var G__8969 = (i__8427__auto___8968 + (1));
-i__8427__auto___8968 = G__8969;
+var G__13555 = (i__8427__auto___13554 + (1));
+i__8427__auto___13554 = G__13555;
 continue;
 } else {
 }
@@ -88,9 +88,9 @@ var argseq__8434__auto__ = ((((1) < args__8433__auto__.length))?(new cljs.core.I
 return adzerk.boot_reload.client.connect.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),argseq__8434__auto__);
 });
 
-adzerk.boot_reload.client.connect.cljs$core$IFn$_invoke$arity$variadic = (function (url,p__8963){
-var vec__8964 = p__8963;
-var opts = cljs.core.nth.call(null,vec__8964,(0),null);
+adzerk.boot_reload.client.connect.cljs$core$IFn$_invoke$arity$variadic = (function (url,p__13549){
+var vec__13550 = p__13549;
+var opts = cljs.core.nth.call(null,vec__13550,(0),null);
 if(cljs.core.truth_(adzerk.boot_reload.connection.alive_QMARK_.call(null))){
 return null;
 } else {
@@ -99,33 +99,33 @@ adzerk.boot_reload.client.patch_goog_base_BANG_.call(null);
 
 cljs.core.reset_BANG_.call(null,adzerk.boot_reload.connection.ws_conn,conn);
 
-clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"opened","opened",-1451743091),((function (conn,vec__8964,opts){
+clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"opened","opened",-1451743091),((function (conn,vec__13550,opts){
 return (function (evt){
 adzerk.boot_reload.connection.send_message_BANG_.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"type","type",1174270348),new cljs.core.Keyword(null,"set-protocol","set-protocol",1849530943),new cljs.core.Keyword(null,"protocol","protocol",652470118),window.location.protocol], null));
 
 return console.info("Reload websocket connected.");
-});})(conn,vec__8964,opts))
+});})(conn,vec__13550,opts))
 );
 
-clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"message","message",-406056002),((function (conn,vec__8964,opts){
+clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"message","message",-406056002),((function (conn,vec__13550,opts){
 return (function (evt){
 var msg = cljs.reader.read_string.call(null,evt.message);
 return adzerk.boot_reload.client.handle.call(null,msg,opts);
-});})(conn,vec__8964,opts))
+});})(conn,vec__13550,opts))
 );
 
-clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"closed","closed",-919675359),((function (conn,vec__8964,opts){
+clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"closed","closed",-919675359),((function (conn,vec__13550,opts){
 return (function (evt){
 cljs.core.reset_BANG_.call(null,adzerk.boot_reload.connection.ws_conn,null);
 
 return console.info("Reload websocket connection closed.");
-});})(conn,vec__8964,opts))
+});})(conn,vec__13550,opts))
 );
 
-clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"error","error",-978969032),((function (conn,vec__8964,opts){
+clojure.browser.event.listen.call(null,conn,new cljs.core.Keyword(null,"error","error",-978969032),((function (conn,vec__13550,opts){
 return (function (evt){
 return console.error("Reload websocket error:",evt);
-});})(conn,vec__8964,opts))
+});})(conn,vec__13550,opts))
 );
 
 return clojure.browser.net.connect.call(null,conn,adzerk.boot_reload.client.resolve_url.call(null,url,new cljs.core.Keyword(null,"ws-host","ws-host",587956291).cljs$core$IFn$_invoke$arity$1(opts)));
@@ -134,10 +134,10 @@ return clojure.browser.net.connect.call(null,conn,adzerk.boot_reload.client.reso
 
 adzerk.boot_reload.client.connect.cljs$lang$maxFixedArity = (1);
 
-adzerk.boot_reload.client.connect.cljs$lang$applyTo = (function (seq8961){
-var G__8962 = cljs.core.first.call(null,seq8961);
-var seq8961__$1 = cljs.core.next.call(null,seq8961);
-return adzerk.boot_reload.client.connect.cljs$core$IFn$_invoke$arity$variadic(G__8962,seq8961__$1);
+adzerk.boot_reload.client.connect.cljs$lang$applyTo = (function (seq13547){
+var G__13548 = cljs.core.first.call(null,seq13547);
+var seq13547__$1 = cljs.core.next.call(null,seq13547);
+return adzerk.boot_reload.client.connect.cljs$core$IFn$_invoke$arity$variadic(G__13548,seq13547__$1);
 });
 
 
