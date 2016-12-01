@@ -15,7 +15,7 @@
             "main"
             (.-CT_CONTINUOUS controls)
             (clj->js [timeline-sensor])
-            live/update-loop)
+            live/continuous-timeline-sensor);;<- I prefer naming this after the sensor/controls that creates it.
 
         load-data (engine/enter-b4w-data "monkey_project.json"
                    (.getElementById js/document "container"))]

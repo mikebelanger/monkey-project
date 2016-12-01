@@ -10,15 +10,19 @@ Experimental live-coding project using [blend4web](http://www.blend4web.org/) vi
 
 3. Get into a terminal emulator, and cd into the repo
 
-4. Enter the following command (you should be in the same directory as the build.boot file)
+4. To live-code, enter the following command (you should be in the same directory as the build.boot file)
 ```bash
 boot b4w-live
 ```
 
-5. Wait for it to download the deps/compile all the js, and point your browser to `localhost:8000`.  Boom.
+5. Wait for it to download the deps/compile all the js, ignore the epic list of warnings the compiler gives you, and point your browser to `localhost:8000`.  Boom.
 
-6. Open up `src/monkey_project/live.cljs` in your very favorite editor.  Start messing around.
+6. Open up `src/monkey_project/live.cljs`.  Specifically, the `actions` map.
 
-7. Brace yourselves for some crazy.  Look the browser -- we are.....LLLLLLIVE!  Now we just need Bruce Buffer to say that.
+7. Brace yourselves for some crazy.  Look the browser -- we are.....LLLLLLIVE!
 
 Enjoy!
+
+If you'd like to share on the web, I recommend using the `:advanced` compilation settings, or
+
+`boot deploy`

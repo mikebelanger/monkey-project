@@ -1,6 +1,7 @@
 (ns monkey-project.live
   (:require [monkey-project.engine-interface :as engine]
-            [clojure.core.async :as async])
+            [clojure.core.async :as async]
+            [cljs.core.match :refer-macros [match]])
   (:require-macros [cljs.core.async.macros :refer [go go-loop]]))
 
 (def scenes (engine/load-b4w-module :scenes))
@@ -9,17 +10,27 @@
 (def material (engine/load-b4w-module :material))
 (def rgba (engine/load-b4w-module :rgba))
 
-(def some-symbol {:a 1})
+(def actions
+  {:expand-shrink (fn [obj time] (do
+                                  (match
+                                   [(mod (Math.round time) 2)]
+                                    [0] (.set-scale transform obj 2.3)
+                                    [1] (.set-scale transform obj 0.75))
+                                  (.set-rotation-euler transform obj
+                                         (* time 1.0)
+                                         3
+                                         (* time 0.3))
+                                  (.set-diffuse-color material obj
+                                              "Material"
+                                              (.from-values rgba
+                                                            120
+                                                            100
+                                                            200
+                                                            1))
+                                  (.set-diffuse-intensity material obj
+                                              "Material"
+                                              (* time 0.0005))))})
 
-(def fn-map
-  {:change (fn [obj time] (doall (.set-rotation-euler transform obj
-                                   (* 0 time)
-                                   (* 0 time)
-                                   (* 2 time))
-                                 (.set-diffuse-color material obj "Material"
-                                          (.from-values rgba
-                                            100 2 10 1))))})
-
-(defn update-loop [time]
+(defn continuous-timeline-sensor [time]
   (let [monkey (.get-object-by-name scenes "Monkey")]
-       ((:change fn-map) monkey time)))
+       ((:expand-shrink actions) monkey time)))
